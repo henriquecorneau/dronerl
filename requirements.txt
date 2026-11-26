@@ -1,0 +1,7 @@
+stable-baselines3[extra]>=2.3
+gymnasium>=1.0
+numpy
+matplotlib
+tqdm
+rich
+jupyterlab
