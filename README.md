@@ -7,11 +7,19 @@ e [Gymnasium](https://gymnasium.farama.org/).
 Tudo roda em **notebooks Jupyter** e funciona no **Google Colab**, sem instalar nada localmente.
 A ideia é aumentar a complexidade aos poucos: cada etapa reaproveita o que foi aprendido na anterior.
 
+### Corrida de fantasmas: a mesma rede em diferentes momentos do treino
+
+![Corrida de fantasmas](assets/corrida_de_fantasmas.gif)
+
+### Os 8 drones de treino (mesma rede, com ruído de exploração), do início ao fim do treino
+
+![Drones de treino](assets/drones_de_treino.gif)
+
 ## Roteiro
 
 | Etapa | Notebook | O que você aprende | Status |
 |---|---|---|---|
-| 1 | [`01_corrida_2d_ponto_de_massa`](notebooks/01_corrida_2d_ponto_de_massa.ipynb) [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/henriquecorneau/dronerl/blob/main/notebooks/01_corrida_2d_ponto_de_massa.ipynb) | Conceitos de RL (MDP, política, recompensa), como criar um ambiente Gymnasium, detectar passagem por portões, treinar e avaliar PPO | ✅ |
+| 1 | [`01_corrida_2d_ponto_de_massa`](notebooks/01_corrida_2d_ponto_de_massa.ipynb) [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/henriquecorneau/dronerl/blob/main/notebooks/01_corrida_2d_ponto_de_massa.ipynb) | Conceitos de RL (MDP, política, recompensa), como criar um ambiente Gymnasium, detectar passagem por portões, treinar e avaliar PPO, visualizar o aprendizado com vários drones | ✅ |
 | 2 | `02_dinamica_quadrotor_3d` | Dinâmica de corpo rígido do quadrotor (quaternions, empuxo coletivo + body rates), frames ENU/FLU e verificação numérica | 🔜 |
 | 3 | `03_ambiente_corrida_3d` | Pista 3D com portões orientados, observação no frame do corpo, colisão | 🔜 |
 | 4 | `04_treino_ppo_3d` | Treino em escala: `VecNormalize`, `SubprocVecEnv`, curriculum, tuning de hiperparâmetros | 🔜 |
@@ -44,6 +52,7 @@ jupyter lab
 
 ```
 dronerl/
+├── assets/             # GIFs usados no README
 ├── notebooks/          # uma etapa por notebook
 ├── requirements.txt
 └── runs/               # (gerado) logs do TensorBoard e modelos salvos, ignorado pelo git
